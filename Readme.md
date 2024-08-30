@@ -246,3 +246,7 @@ if (melhor_tempo is None or weather_code < melhor_tempo) and avg_temp > 20:
     melhor_temperatura_media = avg_temp
 ```
 # 📈 Visualização dos dados 📈
+No ambiente BigQuery é possível exportar o conjunto de dados para o Looker Studio.
+![bigquery](https://github.com/user-attachments/assets/5cf4f024-ac1d-43e6-82d8-5830dd77d281)
+
+Inicialmente, de forma simples, a proposta foi analisar o número de chamados e associá-los aos tipos de reclamações, como essas reclamações se comportam ao longo do tempo e como ficaram as situações dessas reclamações (se foram encerradas ou ainda não foram encerradas).
