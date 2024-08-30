@@ -42,13 +42,22 @@ query = """
     FROM `datario.adm_central_atendimento_1746.chamado`
     WHERE DATE(data_inicio) = '2023-04-01'
 ```
-Para selecionar o 'tipo' ou o 'bairro' com mais chamados, utilizei as consultas:
+Para selecionar o 'tipo', subprefeitura ou 'bairro' com mais chamados, utilizei as seguintes consultas abaixo:
+Tipo de chamado
 ```bash
 query = """
     SELECT tipo, COUNT(id_chamado) as total_chamados
     ...
 """
 ```
+Subprefeitura
+```bash
+query = """
+    SELECT b.subprefeitura, COUNT(c.id_chamado) AS total_chamados
+    ...
+"""
+```
+Bairro
 e
 ```bash
 query_top_bairros = """
