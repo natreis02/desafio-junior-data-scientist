@@ -31,30 +31,43 @@ from google.cloud import bigquery
 
 # Autenticação do usuário no Google Colab
 from google.colab import auth
+
 auth.authenticate_user()
 
 # Credenciais da conta de serviço para BigQuery
 credentials_json = {
     "type": "service_account",
+    
     "project_id": "new-project-433213",
+    
     "private_key_id": "afc761a0ce8074e298d41cd1c8772b5eaa410ecf",
+    
     "private_key": "-----BEGIN PRIVATE KEY-----\n<chave_privada_aqui>\n-----END PRIVATE KEY-----\n",
+    
     "client_email": "bigquery-access@new-project-433213.iam.gserviceaccount.com",
+    
     "client_id": "106010814922063980915",
+    
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    
     "token_uri": "https://oauth2.googleapis.com/token",
+    
     "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/bigquery-access%40new-project-433213.iam.gserviceaccount.com"
 }
 
 # Inicialização do cliente BigQuery
 credentials = service_account.Credentials.from_service_account_info(credentials_json)
+
 client = bigquery.Client(credentials=credentials, project='new-project-433213')
 
 # 1. Quantidade de chamados abertos em 01/04/2023
 query = """
     SELECT COUNT(*) as total_chamados
+    
     FROM `datario.adm_central_atendimento_1746.chamado`
+    
     WHERE DATE(data_inicio) = '2023-04-01'
 """
 df = client.query(query).to_dataframe()
