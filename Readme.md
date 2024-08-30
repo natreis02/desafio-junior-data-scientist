@@ -39,7 +39,7 @@ credentials_json = {
     "type": "service_account",
     "project_id": os.getenv("GOOGLE_PROJECT_ID"),
     "private_key_id": os.getenv("GOOGLE_PRIVATE_KEY_ID"),
-    "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace('\\n', '\n'),  # Corrige a nova linha
+    "private_key": os.getenv("GOOGLE_PRIVATE_KEY").replace('\\n', '\n'),  
     "client_email": os.getenv("GOOGLE_CLIENT_EMAIL"),
     "client_id": os.getenv("GOOGLE_CLIENT_ID"),
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
@@ -59,7 +59,7 @@ Em seguida, foram realizadas as consultas em cada tabela especificada nos exerc�
 
 `datario.turismo_fluxo_visitantes.rede_hoteleira_ocupacao_eventos`
 ```
-E os dataframes foram combinados e exibidos no código pelo comando <print(df_combined.head())>
+E os dataframes foram combinados e exibidos no código pelo comando 'print(df_combined.head())'.
 
 ### 📊 Análises Realizadas Análises realizadas
 Analisamos a quantidade de chamados abertos, tipos de chamados com mais registros, os bairros com mais chamados e subprefeituras com mais chamados. 
