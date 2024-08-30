@@ -1,4 +1,4 @@
-# -*- Resolução do desafio de Análise em python dos dados -*-
+#  Resolução do desafio de Análise em python dos dados 
 """
 analise_python.ipynb
 
