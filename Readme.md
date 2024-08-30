@@ -64,7 +64,7 @@ Em seguida, foram realizadas as consultas em cada tabela especificada nos exerc�
 ```
 E os dataframes foram combinados e exibidos no código pelo comando `print(df_combined.head())`.
 
-### 📊 Análises Realizadas Análises realizadas
+### 📊 Análises Realizadas 
 Analisamos a quantidade de chamados abertos, tipos de chamados com mais registros, os bairros com mais chamados e subprefeituras com mais chamados. 
 Para a contagem do número de chamados que foram abertos na data 01/04/2023, utilizei a seguinte consulta SQL:
 ```bash
@@ -97,6 +97,17 @@ query_top_bairros = """
     ...
 """
 ```
+Para selecionar os chamados com o subtipo 'Perturbação do Sossego' durante os eventos, realizamos a consulta selecionando os chamdos da tabela `datario.adm_central_atendimento_1746.chamado` que foram abertos durante os eventos do conjunto de dados `datario.turismo_fluxo_visitantes.rede_hoteleira_ocupacao_eventos`. Essa consulta também filtra os eventos que são "Reveillon", "Rock in Rio" e "Carnaval" e considera apenas os chamados nas datas "2022-01-01" e "2023-12-31". A consulta faz uma junção (JOIN) entre a tabela de chamados e a tabela de eventos, usando a condição de que a data de início do chamado `(c.data_inicio)` deve estar entre a data inicial `(e.data_inicial)` e a data final `(e.data_final)` do evento.
 
-
-
+```bash
+query_chamados_eventos = """
+    SELECT COUNT(c.id_chamado) AS total_chamados_eventos
+    FROM `datario.adm_central_atendimento_1746.chamado` c
+    JOIN `datario.turismo_fluxo_visitantes.rede_hoteleira_ocupacao_eventos` e
+    ON DATE(c.data_inicio) BETWEEN DATE(e.data_inicial) AND DATE(e.data_final)
+    WHERE c.subtipo = 'Perturbação do sossego'
+    AND e.evento IN ('Reveillon', 'Rock in Rio', 'Carnaval')
+    AND DATE(c.data_inicio) BETWEEN '2022-01-01' AND '2023-12-31'
+"""
+"""
+```
