@@ -249,4 +249,22 @@ if (melhor_tempo is None or weather_code < melhor_tempo) and avg_temp > 20:
 No ambiente BigQuery é possível exportar o conjunto de dados para o Looker Studio.
 ![bigquery](https://github.com/user-attachments/assets/5cf4f024-ac1d-43e6-82d8-5830dd77d281)
 
-Inicialmente, de forma simples, a proposta foi analisar o número de chamados e associá-los aos tipos de reclamações, como essas reclamações se comportam ao longo do tempo e como ficaram as situações dessas reclamações (se foram encerradas ou ainda não foram encerradas).
+## 1. 📅 Planejamento da visualização dos dados
+Inicialmente, a proposta foi analisar o número de chamados e também associar aos bairros, considerando as áreas de planejamento e relacioná-las aos tipos de reclamações. A intenção é visualizar de maneira clara como essas reclamações se comportam ao longo do tempo e como ficaram as situações dessas reclamações (se foram encerradas ou ainda não foram encerradas), comparando-as...
+
+## 2. ♟️ Estratégia de conexão de tabelas
+Para a geração dos gráficos e posteriormente serem feitas as análises dos dados, utilizou-se a conexão entre tabelas do `datário`. Para economizar tempo ao fazer essa conexão na consulta SQL, pensou-se na estratégia de conectar as `tabelas datario.adm_central_atendimento_1746.chamadoa` e `datario.dados_mestres.bairrotravés da coluna` através da coluna `id_bairro` e utilizar apenas colunas necessárias de uma das tabelas, como é mostrado abaixo.
+
+```bash
+SELECT
+    ac.*,
+    b.nome_regiao_planejamento,
+    b.area
+FROM
+    datario.adm_central_atendimento_1746.chamado ac
+JOIN
+    datario.dados_mestres.bairro b
+ON
+    ac.id_bairro = b.id_bairro;
+```
+Após isso, no Looker Studio, foram realizadas análises com gráficos de coluna, barras empilhadas, linhas e mapa de árvore.
