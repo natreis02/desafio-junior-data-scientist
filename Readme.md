@@ -163,3 +163,57 @@ else:
     print('Erro ao obter os dados da API.')
 ```
 `response.json()` converte a resposta da API, que está em formato JSON, em um dicionário (ou lista) Python. Esses dados são então armazenados na variável `holydays`  e por fim os feriados foram retornados pela API.
+No código acima foram contados, então, quantos feriados há no Brasil em 2024. 
+
+Em seguida, perguntou-se qual o mês de 2024 tem o maior número de feriados. Para isso, desenvolve-se o seguinte código:
+
+```bash
+  # Contar o número de feriados por mês
+    holidays_by_month = defaultdict(int)
+    for holiday in holidays:
+        month = int(holiday['date'].split('-')[1])
+        holidays_by_month[month] += 1
+```
+Onde é criado um dicionário `holidays_by_month`,  usando `defaultdict` do módulo `collections`. O `defaultdict(int)` inicializa qualquer chave nova com o valor 0. Isso é útil para contar o número de feriados por mês sem precisar verificar se a chave já existe no dicionário. Assim,  esse código conta quantos feriados existem em cada mês e armazena essas contagens em um dicionário, onde as chaves são os números dos meses (1 para janeiro, 2 para fevereiro, etc.) e os valores são as quantidades de feriados em cada mês.
+
+Para responder a próxima pergunta, foi adicionado um bloco para contar o número de feriados que caem em dias de semana (segunda a sexta-feira). A data do feriado foi convertida de string para objeto `datatime`
+```bash
+for holiday in holidays:
+        holiday_date = datetime.strptime(holiday['date'], '%Y-%m-%d')
+        if holiday_date.weekday() < 5:  
+            weekday_holidays += 1
+```
+Assim, verifica-se se o feriado cai em um dia de semana e `if holiday_date.weekday() < 5` (onde `weekday()` retorna 0 para segunda-feira e 4 para sexta-feira). O `weekday_holidays += 1` conta os feriados em dia da semana.
+
+Em relação a temperatura média em cada mês, utilizou-se um dicionário `temperatures_by_month` para armazenar as temperaturas diárias em listas, agrupadas por mês. Assim, itera-se sobre cada dia dentro do intervalo de datas `(start_date a end_date)` e adiciona a temperatura diária à lista correspondente ao mês.
+Depois, para cada mês, calcula-se a média das temperaturas diárias armazenadas na lista.
+```bash
+ # Calcular a temperatura média mensal
+    temperatures_by_month = {}
+    current_date = start_date
+    while current_date < end_date:
+        month = current_date.month
+        if month not in temperatures_by_month:
+            temperatures_by_month[month] = []
+
+        temperature = data['daily']['temperature_2m_mean'][current_date.day - 1]
+        temperatures_by_month[month].append(temperature)
+
+        current_date += timedelta(days=1)
+```
+Para a questão 5 foi adicionado um dicionário de códigos de tempo para mapear códigos numéricos para descrições de condições meteorológicas, como "Céu limpo", "Chuva leve", etc. O código conta as ocorrências de cada código de tempo para cada mês usando um `Counter` do módulo `collections`.
+
+```bash
+# Determinar o tempo predominante em cada mês
+for month, weather_codes in weather_codes_by_month.items():
+    if weather_codes:
+        most_common_code = Counter(weather_codes).most_common(1)[0][0]
+        # Substitua a descrição com o dicionário definido anteriormente
+        weather_description = weather_codes_dict.get(most_common_code, f"Código de tempo {most_common_code} não encontrado")
+        print(f'Tempo predominante em {month}/{2024}: {weather_description}')
+    else:
+        print(f'Tempo predominante em {month}/{2024}: Sem dados suficientes')
+
+```
+Depois, foi pedido para se considerar algumas suposições, como:
+- **O cidadão carioca considera "frio" um dia cuja temperatura média é menor que 20ºC**
