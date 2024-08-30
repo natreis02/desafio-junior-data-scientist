@@ -8,7 +8,7 @@ Este script realiza análises sobre os chamados abertos no dia 01/04/2023 na Cen
 3. Respostas às perguntas sobre os chamados do dia 01/04/2023.
 
 ## Autor
-[Seu Nome]
+Natália França dos Reis
 
 ## Código
 
