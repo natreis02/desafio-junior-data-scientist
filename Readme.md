@@ -111,3 +111,4 @@ query_chamados_eventos = """
 """
 """
 ```
+# 🌐 Análise de API'S Públicas 🌐
