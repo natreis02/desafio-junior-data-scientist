@@ -32,3 +32,30 @@ from google.colab import auth
 auth.authenticate_user()
 ```
 ### 4. Configurações das credenciais
+
+### 📊 Análises Realizadas Análises realizadas
+Analisamos a quantidade de chamados abertos, tipos de chamados com mais registros, os bairros com mais chamados e subprefeituras com mais chamados. 
+Para a contagem do número de chamados que foram abertos na data 01/04/2023, utilizei a seguinte consulta SQL:
+```bash
+query = """
+    SELECT COUNT(*) as total_chamados
+    FROM `datario.adm_central_atendimento_1746.chamado`
+    WHERE DATE(data_inicio) = '2023-04-01'
+```
+Para selecionar o 'tipo' ou o 'bairro' com mais chamados, utilizei as consultas:
+```bash
+query = """
+    SELECT tipo, COUNT(id_chamado) as total_chamados
+    ...
+"""
+```
+e
+```bash
+query_top_bairros = """
+    SELECT id_bairro, COUNT(id_chamado) AS total_chamados
+    ...
+"""
+```
+
+
+
