@@ -10,7 +10,7 @@ Passos:
 2. Autenticação do usuário.
 3. Respostas às perguntas sobre os chamados do dia 01/04/2023.
 
-Autor: [Seu Nome]
+Autor: Natália França dos Reis
 """
 
 # Instalação de pacotes necessários
