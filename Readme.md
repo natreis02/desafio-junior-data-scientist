@@ -32,7 +32,7 @@ O processo de autenticação foi realizado para o acesso do usuário a sua conta
 from google.colab import auth
 auth.authenticate_user()
 ```
-#### Configurações de acesso entre Python e Big Query.
+Nas configurações de acesso entre Python e Big Query, foi necessário dar permissão ao usuário _bigquery-acess_ e configurá-lo no papel de _Administrador do BigQuery_ e _BigQuery Connection User_.
 ![acesso](https://github.com/user-attachments/assets/aeeb285a-2fe8-4f9d-acf4-7f97d58fb3fc)
 
 ### 4. Configurações das credenciais
