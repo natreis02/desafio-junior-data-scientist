@@ -269,4 +269,6 @@ ON
 ```
 Após isso, no Looker Studio, foram realizadas análises com gráficos de coluna, barras empilhadas, linhas e mapa de árvore.
 
-A visualização dos dados se encontram no link: https://lookerstudio.google.com/reporting/96fa1ca3-5cc0-44d2-9527-656289d57445.
+A visualização dos dados se encontra na apresentação do Looker Studio através do link: 
+
+https://lookerstudio.google.com/reporting/96fa1ca3-5cc0-44d2-9527-656289d57445.
