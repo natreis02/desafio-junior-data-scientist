@@ -18,4 +18,11 @@ Primeiro, assegure-se de que as bibliotecas essenciais estão instaladas:
 !pip install basedosdados
 !pip install --upgrade google-cloud-bigquery
 ```
-## 2. Importação dos dados
+## 2. Importação dos pacotes
+```bash
+import pandas as pd
+import pandas_gbq
+from google.oauth2 import service_account
+import basedosdados as bd
+import google.cloud.bigquery as bigquery
+```
