@@ -74,6 +74,7 @@ query = """
     WHERE DATE(data_inicio) = '2023-04-01'
 ```
 Para selecionar o 'tipo', subprefeitura ou 'bairro' com mais chamados, utilizei as seguintes consultas abaixo:
+
 Tipo de chamado
 ```bash
 query = """
