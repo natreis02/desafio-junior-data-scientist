@@ -18,5 +18,4 @@ Primeiro, assegure-se de que as bibliotecas essenciais estão instaladas:
 !pip install basedosdados
 !pip install --upgrade google-cloud-bigquery
 
-
 ### 2. Importação dos dados
