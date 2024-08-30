@@ -118,5 +118,48 @@ Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma
 -**Python** : Linguagem de programação utilizada para implementar o código.
 -**Google Colab-**: Ambiente onde o código foi desenvolvido e executado.
 -**APIs Públicas-**:
--***Public Holiday API: Usada para obter informações sobre feriados.***
-Open-Meteo Historical Weather API: Utilizada para recuperar dados meteorológicos históricos.
+
+-Public Holiday API: Usada para obter informações sobre feriados.
+-Open-Meteo Historical Weather API: Utilizada para recuperar dados meteorológicos históricos.
+
+##  🚀 Funcionalidades e como executar o Script
+### 1. Importação dos pacotes
+Os pacotes utilizados foram:
+```bash
+import requests
+import requests
+from collections import defaultdict
+from datetime import datetime, timedelta
+from collections import Counter
+```
+### 2. Construção da url do API
+A URL final será composta pela combinação da base da URL `https://date.nager.at/api/v3/PublicHolidays/` com o ano e o código do país.
+```bash
+# Definição de ano e país
+country = 'BR'
+year = 2024
+
+# Construir a URL da API
+url = f'https://date.nager.at/api/v3/PublicHolidays/{year}/{country}'
+
+# Fazer a requisição
+response = requests.get(url)
+```
+### 🔍 Requisição e Análises 
+Este bloco de código verifica se a requisição HTTP feita anteriormente foi bem-sucedida. Se a requisição foi bem-sucedida `status_code` é 200 e o código dentro do bloco `if` será executado.
+
+```bash
+# Verificar se a requisição foi bem-sucedida
+if response.status_code == 200:
+
+    # Obter os dados da resposta
+    holidays = response.json()
+
+    # Contar o número de feriados
+    num_holidays = len(holidays)
+
+    print(f'Há {num_holidays} feriados no Brasil em {year}.')
+else:
+    print('Erro ao obter os dados da API.')
+```
+`response.json()` converte a resposta da API, que está em formato JSON, em um dicionário (ou lista) Python. Esses dados são então armazenados na variável `holydays`  e por fim os feriados foram retornados pela API.
