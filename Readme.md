@@ -32,8 +32,11 @@ O processo de autenticação foi realizado para o acesso do usuário a sua conta
 from google.colab import auth
 auth.authenticate_user()
 ```
+#### Configurações de acesso entre Python e Big Query.
+![acesso](https://github.com/user-attachments/assets/aeeb285a-2fe8-4f9d-acf4-7f97d58fb3fc)
+
 ### 4. Configurações das credenciais
-# Dicionário com as credenciais JSON
+Dicionário com as credenciais JSON
 ```bash
 credentials_json = {
     "type": "service_account",
