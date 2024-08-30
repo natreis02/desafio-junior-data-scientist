@@ -216,4 +216,33 @@ for month, weather_codes in weather_codes_by_month.items():
 
 ```
 Depois, foi pedido para se considerar algumas suposições, como:
-- **O cidadão carioca considera "frio" um dia cuja temperatura média é menor que 20ºC**
+- O cidadão carioca considera "frio" um dia cuja temperatura média é menor que 20ºC.
+- Um feriado bem aproveitado no Rio de Janeiro é aquele em que se pode ir à praia;.
+- O cidadão carioca só vai à praia quando não está com frio.
+- O cidadão carioca também só vai à praia em dias com sol, evitando dias totalmente nublados ou chuvosos (considere weather_code para determinar as condições climáticas).
+- 
+O código é realizado em etapas para avaliar os feriados. Para cada feriado, o código faz uma requisição à API para obter dados diários de temperatura máxima, mínima e o código do tempo, calcula a temperatura média do dia como a média entre a temperatura máxima e mínima, verifica se a temperatura média é menor que 20°C, Verifica se o código de tempo indica condições não apropriadas para ir à praia (códigos que representam dias nublados ou chuvosos). Assim, Se qualquer uma das condições de "não aproveitável" é atendida (temperatura baixa ou condições climáticas ruins), imprime que o feriado é "não aproveitável". Caso contrário, imprime que é "aproveitável".
+
+```bash
+  # Verificar se o feriado foi "não aproveitável"
+weather_desc = weather_codes_dict.get(weather_code, "Código de tempo desconhecido")
+if avg_temp < 20 or weather_code in {2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99}:
+    print(f'{nome_feriado} ({data_feriado.strftime("%d/%m/%Y")}):')
+    print(f'Tempo: {weather_desc}')
+    print(f'Temperatura média: {avg_temp:.1f}°C')
+    print('Resultado: Feriado "não aproveitável"\n')
+else:
+    print(f'{nome_feriado} ({data_feriado.strftime("%d/%m/%Y")}):')
+    print(f'Tempo: {weather_desc}')
+    print(f'Temperatura média: {avg_temp:.1f}°C')
+    print('Resultado: Feriado aproveitável\n')
+```
+Após isso é definido qual o feriado "mais aproveitável" de 2024. A parte mais importante é a seção que compara os dados climáticos e de temperatura dos feriados para determinar qual feriado é o mais aproveitável. Especificamente, a lógica dentro deste bloco:
+
+```bash
+if (melhor_tempo is None or weather_code < melhor_tempo) and avg_temp > 20:
+    feriado_mais_aproveitavel = nome_feriado
+    melhor_tempo = weather_code
+    melhor_temperatura_media = avg_temp
+```
+# 📈 Visualização dos dados 📈
