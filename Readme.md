@@ -15,6 +15,7 @@ Autor: Natália França dos Reis
 
 # Instalação de pacotes necessários
 !pip install basedosdados
+
 !pip install --upgrade google-cloud-bigquery
 
 # Importação de bibliotecas
