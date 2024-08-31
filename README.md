@@ -199,18 +199,21 @@ Depois, para cada mês, calcula-se a média das temperaturas diárias armazenada
 
         current_date += timedelta(days=1)
 ```
-Para identificar o clima predominante em cada mês foi adicionado um dicionário para mapear condições meteorológicas, como "Céu limpo", "Chuva leve", etc. O código conta as ocorrências de clima para cada mês usando um `Counter` do módulo `collections`.
+Para identificar o clima predominante em cada mês foi adicionado um dicionário para mapear condições meteorológicas, como "Céu limpo", "Chuva leve", etc. 
 
 ```bash
-# Determinar o tempo predominante em cada mês
-for month, weather_codes in weather_codes_by_month.items():
-    if weather_codes:
-        most_common_code = Counter(weather_codes).most_common(1)[0][0]
-        # Substitua a descrição com o dicionário definido anteriormente
-        weather_description = weather_codes_dict.get(most_common_code, f"Código de tempo {most_common_code} não encontrado")
-        print(f'Tempo predominante em {month}/{2024}: {weather_description}')
-    else:
-        print(f'Tempo predominante em {month}/{2024}: Sem dados suficientes')
+ # Calcular o tempo predominante mensal
+    weather_by_month = {}
+    current_date = start_date
+    while current_date < end_date:
+        month = current_date.month
+        if month not in weather_by_month:
+            weather_by_month[month] = []
+
+        weather_code = data['daily']['weathercode'][current_date.day - 1]
+        weather_by_month[month].append(weather_code)
+
+        current_date += timedelta(days=1)
 
 ```
 Depois, foram consideradas algumas suposições, como:
