@@ -12,7 +12,7 @@ Este repositório contém a análise dos chamados registrados pela Central de At
 ## 🚀 Como Executar o Script
 
 ### 1. Instalação das Bibliotecas Necessárias e conexão com o Big Query
-Primeiro, instale as bibliotecas e pacotes essenciais para em seguida, se conectar ao Big Query.
+Primeiro, instale as bibliotecas e pacotes essenciais para, em seguida, se conectar ao Big Query.
 
 ```bash
 !pip install basedosdados
