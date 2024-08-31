@@ -199,7 +199,7 @@ Depois, para cada mês, calcula-se a média das temperaturas diárias armazenada
 
         current_date += timedelta(days=1)
 ```
-Para a questão 5 foi adicionado um dicionário de códigos de tempo para mapear códigos numéricos para descrições de condições meteorológicas, como "Céu limpo", "Chuva leve", etc. O código conta as ocorrências de cada código de tempo para cada mês usando um `Counter` do módulo `collections`.
+Para a questão seguinte foi adicionado um dicionário de códigos de tempo para mapear códigos numéricos para descrições de condições meteorológicas, como "Céu limpo", "Chuva leve", etc. O código conta as ocorrências de cada código de tempo para cada mês usando um `Counter` do módulo `collections`.
 
 ```bash
 # Determinar o tempo predominante em cada mês
