@@ -90,7 +90,7 @@ query = """
 """
 ```
 Bairro
-e
+
 ```bash
 query_top_bairros = """
     SELECT id_bairro, COUNT(id_chamado) AS total_chamados
