@@ -116,11 +116,11 @@ Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma
 
 ## 🔧 Ferramentas Utilizadas
 - **Python** : Linguagem de programação utilizada para implementar o código.
-- **Google Colab-**: Ambiente onde o código foi desenvolvido e executado.
-- **APIs Públicas-**:
+- **Google Colab**: Ambiente onde o código foi desenvolvido e executado.
+- **APIs Públicas**:
 
--Public Holiday API: Usada para obter informações sobre feriados.
--Open-Meteo Historical Weather API: Utilizada para recuperar dados meteorológicos históricos.
+    - Public Holiday API: Usada para obter informações sobre feriados.
+    - Open-Meteo Historical Weather API: Utilizada para recuperar dados meteorológicos históricos.
 
 ##  🚀 Funcionalidades e como executar o Script
 ### 1. Importação dos pacotes
