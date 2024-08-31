@@ -36,7 +36,7 @@ Nas configurações de acesso entre Python e Big Query, foi necessário dar perm
 ![acesso](https://github.com/user-attachments/assets/6634a04c-9f75-424d-acf2-79c48fe734ab)
 
 ### 4. Configurações das credenciais
-Dicionário com as credenciais JSON
+Dicionário com as credenciais JSON (As credencias privadas foram alteradas por questões de segurança. Para acessar o Big Query, utilize o ID do seu projeto e suas próprias credenciais).
 ```bash
 credentials_json = {
     "type": "service_account",
