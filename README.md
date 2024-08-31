@@ -255,7 +255,7 @@ No ambiente BigQuery é possível exportar o conjunto de dados para o Looker Stu
 Inicialmente, a proposta foi analisar o número de chamados e também associar aos bairros, considerando as áreas de planejamento e relacioná-las aos tipos de reclamações. A intenção é visualizar de maneira clara como essas reclamações se comportam ao longo do tempo e como ficaram as situações dessas reclamações (se foram encerradas ou ainda não foram encerradas), comparando-as com cada bairro e associando às áreas de planejamento de cada bairro.
 
 ## 2. ♟️ Estratégia de conexão de tabelas
-Para a geração dos gráficos e posteriormente serem feitas as análises dos dados, utilizou-se a conexão entre tabelas do `datário`. Para economizar tempo ao fazer essa conexão na consulta SQL, pensou-se na estratégia de conectar as `tabelas datario.adm_central_atendimento_1746.chamadoa` e `datario.dados_mestres.bairrotravés da coluna` através da coluna `id_bairro` e utilizar apenas colunas necessárias de uma das tabelas, como é mostrado abaixo.
+Para a geração dos gráficos e posteriormente serem feitas as análises dos dados, utilizou-se a conexão entre tabelas do `datario`. Para economizar tempo ao fazer essa conexão na consulta SQL, pensou-se na estratégia de conectar as `tabelas datario.adm_central_atendimento_1746.chamadoa` e `datario.dados_mestres.bairrotravés da coluna` através da coluna `id_bairro` e utilizar apenas colunas necessárias de uma das tabelas, como é mostrado abaixo.
 
 ```bash
 SELECT
