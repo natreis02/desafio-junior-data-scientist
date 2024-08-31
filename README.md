@@ -127,9 +127,8 @@ Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma
 Os pacotes utilizados foram:
 ```bash
 import requests
-from collections import defaultdict
+from collections import defaultdict, Counter
 from datetime import datetime, timedelta
-from collections import Counter
 ```
 ### 2. Construção da url do API
 A URL final será composta pela combinação da base da URL `https://date.nager.at/api/v3/PublicHolidays/` com o ano e o código do país.
