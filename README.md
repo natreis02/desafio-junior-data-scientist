@@ -1,4 +1,4 @@
-# 🚨 Central de Atendimento 1746 - Análise de Chamados 🚨
+# 🚨 Central de Atendimento 1746 - Análise de Chamados 
 
 Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
 
@@ -111,7 +111,7 @@ query_chamados_eventos = """
 """
 """
 ```
-# 🌐 Análise de APIs Públicas 🌐
+# 🌐 Análise de APIs Públicas 
 Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma análise utilizando duas APIs públicas: a Public Holiday API e a Open-Meteo Historical Weather API. O objetivo é responder a várias perguntas relacionadas a feriados e condições meteorológicas no Brasil durante o ano de 2024.
 
 ## 🔧 Ferramentas Utilizadas
@@ -247,7 +247,7 @@ if (melhor_tempo is None or weather_code < melhor_tempo) and avg_temp > 20:
     melhor_tempo = weather_code
     melhor_temperatura_media = avg_temp
 ```
-# 📈 Visualização dos dados 📈
+# 📈 Visualização dos dados 
 No ambiente BigQuery é possível exportar o conjunto de dados para o Looker Studio.
 ![bigquery](https://github.com/user-attachments/assets/5cf4f024-ac1d-43e6-82d8-5830dd77d281)
 
