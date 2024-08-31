@@ -127,7 +127,6 @@ Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma
 Os pacotes utilizados foram:
 ```bash
 import requests
-import requests
 from collections import defaultdict
 from datetime import datetime, timedelta
 from collections import Counter
