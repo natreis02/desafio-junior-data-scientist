@@ -73,7 +73,7 @@ query = """
     FROM `datario.adm_central_atendimento_1746.chamado`
     WHERE DATE(data_inicio) = '2023-04-01'
 ```
-Para selecionar o 'tipo', subprefeitura ou 'bairro' com mais chamados, utilizei as seguintes consultas abaixo:
+Para selecionar o 'tipo', 'subprefeitura' ou 'bairro' com mais chamados, utilizei as seguintes consultas abaixo:
 
 Tipo de chamado
 ```bash
