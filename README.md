@@ -213,13 +213,13 @@ for month, weather_codes in weather_codes_by_month.items():
         print(f'Tempo predominante em {month}/{2024}: Sem dados suficientes')
 
 ```
-Depois, foi pedido para se considerar algumas suposições, como:
+Depois, foram consideradas algumas suposições, como:
 - O cidadão carioca considera "frio" um dia cuja temperatura média é menor que 20ºC.
 - Um feriado bem aproveitado no Rio de Janeiro é aquele em que se pode ir à praia;.
 - O cidadão carioca só vai à praia quando não está com frio.
 - O cidadão carioca também só vai à praia em dias com sol, evitando dias totalmente nublados ou chuvosos (considere weather_code para determinar as condições climáticas).
-- 
-O código é realizado em etapas para avaliar os feriados. Para cada feriado, o código faz uma requisição à API para obter dados diários de temperatura máxima, mínima e o código do tempo, calcula a temperatura média do dia como a média entre a temperatura máxima e mínima, verifica se a temperatura média é menor que 20°C, Verifica se o código de tempo indica condições não apropriadas para ir à praia (códigos que representam dias nublados ou chuvosos). Assim, Se qualquer uma das condições de "não aproveitável" é atendida (temperatura baixa ou condições climáticas ruins), imprime que o feriado é "não aproveitável". Caso contrário, imprime que é "aproveitável".
+  
+A análise é realizada em etapas para avaliar os feriados. Para cada feriado, o código faz uma requisição à API para obter dados diários de temperatura máxima, mínima e o código do clima, calcula a temperatura média do dia como a média entre a temperatura máxima e mínima, verifica se a temperatura média é menor que 20°C, Verifica se o código de clima indica condições não apropriadas para ir à praia (códigos que representam dias nublados ou chuvosos). Assim, Se qualquer uma das condições de "não aproveitável" é atendida (temperatura baixa ou condições climáticas ruins), imprime que o feriado é "não aproveitável". Caso contrário, imprime que é "aproveitável".
 
 ```bash
   # Verificar se o feriado foi "não aproveitável"
