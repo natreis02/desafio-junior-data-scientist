@@ -130,70 +130,73 @@ else:
 *Utilize como referência para o código de tempo (weather_code) o seguinte link: WMO Code.*
 """
 
+# Definir a localização e o período
+latitude = -22.9068
+longitude = -43.1729
+start_date = datetime(2024, 1, 1)
+end_date = datetime(2024, 8, 1)
+
+# Construir a URL da API
+url = f'https://archive-api.open-meteo.com/v1/archive?latitude={latitude}&longitude={longitude}&start_date={start_date.strftime("%Y-%m-%d")}&end_date={end_date.strftime("%Y-%m-%d")}&daily=weathercode&timezone=America%2FSao_Paulo'
+
+# Fazer a requisição
+response = requests.get(url)
+
 # Verificar se a requisição foi bem-sucedida
 if response.status_code == 200:
     # Obter os dados da resposta
     data = response.json()
 
-    # Dicionário de códigos de tempo
-    weather_codes_dict = {
-        0: "Céu limpo",
-        1: "Céu parcialmente nublado",
-        2: "Nublado",
-        3: "Nevoeiro",
-        45: "Neblina",
-        48: "Geada de deposição",
-        51: "Garoa leve",
-        53: "Garoa moderada",
-        55: "Garoa densa",
-        56: "Garoa congelante leve",
-        57: "Garoa congelante densa",
-        61: "Chuva leve",
-        63: "Chuva moderada",
-        65: "Chuva forte",
-        66: "Chuva congelante leve",
-        67: "Chuva congelante forte",
-        71: "Neve leve",
-        73: "Neve moderada",
-        75: "Neve forte",
-        77: "Neve granulada",
-        80: "Chuva de verão leve",
-        81: "Chuva de verão moderada",
-        82: "Chuva de verão forte",
-        85: "Neve de verão leve",
-        86: "Neve de verão forte",
-        95: "Tempestade com trovões",
-        96: "Tempestade com granizo leve",
-        99: "Tempestade com granizo forte"
-    }
-
-    # Contar o código de tempo predominante em cada mês
-    weather_codes_by_month = {}
+    # Calcular o tempo predominante mensal
+    weather_by_month = {}
     current_date = start_date
-
-    daily_weather_codes = data['daily']['weathercode']
-    total_days = len(daily_weather_codes)
-
-    for i in range(total_days):
+    while current_date < end_date:
         month = current_date.month
-        if month not in weather_codes_by_month:
-            weather_codes_by_month[month] = []
+        if month not in weather_by_month:
+            weather_by_month[month] = []
 
-        weather_code = daily_weather_codes[i]
-        weather_codes_by_month[month].append(weather_code)
+        weather_code = data['daily']['weathercode'][current_date.day - 1]
+        weather_by_month[month].append(weather_code)
 
         current_date += timedelta(days=1)
 
-    # Determinar o tempo predominante em cada mês
-    for month, weather_codes in weather_codes_by_month.items():
-        if weather_codes:
-            most_common_code = Counter(weather_codes).most_common(1)[0][0]
-            if most_common_code in weather_codes_dict:
-                print(f'Tempo predominante em {month}/{2024}: {weather_codes_dict[most_common_code]}')
-            else:
-                print(f'Tempo predominante em {month}/{2024}: Código de tempo {most_common_code} não encontrado no dicionário')
-        else:
-            print(f'Tempo predominante em {month}/{2024}: Sem dados suficientes')
+    # Definir um dicionário para mapear os códigos de tempo para descrições
+    weather_descriptions = {
+       0: "Céu limpo",
+    1: "Céu parcialmente nublado",
+    2: "Nublado",
+    3: "Nevoeiro",
+    45: "Neblina",
+    48: "Geada de deposição",
+    51: "Garoa leve",
+    53: "Garoa moderada",
+    55: "Garoa densa",
+    56: "Garoa congelante leve",
+    57: "Garoa congelante densa",
+    61: "Chuva leve",
+    63: "Chuva moderada",
+    65: "Chuva forte",
+    66: "Chuva congelante leve",
+    67: "Chuva congelante forte",
+    71: "Neve leve",
+    73: "Neve moderada",
+    75: "Neve forte",
+    77: "Neve granulada",
+    80: "Chuva de verão leve",
+    81: "Chuva de verão moderada",
+    82: "Chuva de verão forte",
+    85: "Neve de verão leve",
+    86: "Neve de verão forte",
+    95: "Tempestade com trovões",
+    96: "Tempestade com granizo leve",
+    99: "Tempestade com granizo forte"
+    }
+
+    # Calcular o tempo predominante de cada mês
+    for month, codes in weather_by_month.items():
+        predominant_weather = max(set(codes), key=codes.count)
+        description = weather_descriptions.get(predominant_weather, "Desconhecido")
+        print(f'Tempo predominante em {month}/2024: {description}')
 else:
     print('Erro ao obter os dados da API.')
 
@@ -304,7 +307,8 @@ for nome_feriado, data_feriado in feriados.items():
 
         # Verificar se o feriado foi "não aproveitável"
         weather_desc = weather_codes_dict.get(weather_code, "Código de tempo desconhecido")
-        if avg_temp < 20 or weather_code in {2, 3, 45, 48, 51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 71, 73, 75, 77, 80, 81, 82, 85, 86, 95, 96, 99}:
+        enjoyable_climate = {0,1}
+        if avg_temp < 20 or weather_code not in enjoyable_climate:
             print(f'{nome_feriado} ({data_feriado.strftime("%d/%m/%Y")}):')
             print(f'Tempo: {weather_desc}')
             print(f'Temperatura média: {avg_temp:.1f}°C')
