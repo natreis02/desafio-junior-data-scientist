@@ -115,9 +115,9 @@ query_chamados_eventos = """
 Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma análise utilizando duas APIs públicas: a Public Holiday API e a Open-Meteo Historical Weather API. O objetivo é responder a várias perguntas relacionadas a feriados e condições meteorológicas no Brasil durante o ano de 2024.
 
 ## 🔧 Ferramentas Utilizadas
--**Python** : Linguagem de programação utilizada para implementar o código.
--**Google Colab-**: Ambiente onde o código foi desenvolvido e executado.
--**APIs Públicas-**:
+- **Python** : Linguagem de programação utilizada para implementar o código.
+- **Google Colab-**: Ambiente onde o código foi desenvolvido e executado.
+- **APIs Públicas-**:
 
 -Public Holiday API: Usada para obter informações sobre feriados.
 -Open-Meteo Historical Weather API: Utilizada para recuperar dados meteorológicos históricos.
