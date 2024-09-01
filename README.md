@@ -4,7 +4,7 @@ Neste projeto, exploramos padrões importantes relacionados à base de dados pú
 
 # 🚨 Central de Atendimento 1746 - Análise de Chamados 
 
-Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, contida em `analise_python` referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
+Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, contida em `analise_python`, referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
 
 ## 🛠️ Ferramentas Utilizadas
 
@@ -279,4 +279,4 @@ A visualização dos dados se encontra na apresentação do Looker Studio atrav�
 
 https://lookerstudio.google.com/reporting/96fa1ca3-5cc0-44d2-9527-656289d57445
 
-Uma prévia da apresentação está na pasta "Visualização_dados", neste repositório.
+Uma prévia da apresentação está na pasta `Visualização_dados`, neste repositório.
