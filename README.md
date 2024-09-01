@@ -1,4 +1,4 @@
-# Desafio Cientista de Dados 🏆
+# 🏆 Desafio Cientista de Dados 
 
 Neste projeto, exploramos padrões importantes relacionados aos chamados de "Perturbação do Sossego". Analisamos os tipos mais frequentes de chamados, os bairros e subprefeituras com o maior número de ocorrências, e como eventos de grande porte, como o Carnaval e o Rock in Rio, influenciam a quantidade de chamados. Além disso, este repositório inclui uma análise complementar que utiliza APIs públicas para investigar feriados e condições meteorológicas no Brasil durante 2024. Os resultados dessas análises são apresentados em um dashboard interativo no Looker Studio, que mostra o comportamento dos dados em tabelas conectadas.
 
