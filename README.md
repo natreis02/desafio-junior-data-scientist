@@ -279,6 +279,6 @@ A visualização dos dados se encontra na apresentação do Looker Studio atrav�
 
 https://lookerstudio.google.com/reporting/96fa1ca3-5cc0-44d2-9527-656289d57445
 
-Para acessar a apresentação iterativa é necessário autorização por e-mail (atribuição do papel de Bigquery usuário Studio ao e-mail adicionado). O email responsável pelo desafio (escr*********@gmail.com) já foi autorizado, caso necessite do acesso, por favor entrar em contato.
+Para acessar a apresentação interativa é necessário autorização por e-mail (atribuição do papel de Bigquery usuário Studio ao e-mail adicionado). O email responsável pelo desafio (escr*********@gmail.com) já foi autorizado, caso necessite do acesso, por favor entrar em contato.
 
 Uma prévia da apresentação está na pasta `Visualização_dados`, neste repositório.
