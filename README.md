@@ -4,7 +4,7 @@ Neste projeto, exploramos padrões importantes relacionados à base de dados pú
 
 # 🚨 Central de Atendimento 1746 - Análise de Chamados 
 
-Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
+Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, contida em `analise_python` referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
 
 ## 🛠️ Ferramentas Utilizadas
 
