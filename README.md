@@ -1,10 +1,10 @@
 # 🏆 Desafio Cientista de Dados 
 
-Neste projeto, exploramos padrões importantes relacionados à base de dados pública 'Datario'. Analisamos os tipos mais frequentes de chamados, os bairros e subprefeituras com o maior número de ocorrências, e como eventos de grande porte, como o Carnaval e o Rock in Rio, influenciam a quantidade de chamados. Além disso, este repositório inclui uma análise complementar que utiliza APIs públicas para investigar feriados e condições meteorológicas no Brasil durante 2024. Os resultados dessas análises são apresentados em um dashboard interativo no Looker Studio, que mostra o comportamento dos dados em tabelas conectadas.
+Neste projeto, exploramos padrões importantes relacionados à base de dados pública 'Datario'. No arquibo `analise_python.py` analisamos os tipos mais frequentes de chamados, os bairros e subprefeituras com o maior número de ocorrências, e como eventos de grande porte, como o Carnaval e o Rock in Rio, influenciam a quantidade de chamados. Além disso, este repositório inclui uma análise complementar que utiliza APIs públicas, no arquivo `analise_api.py` para investigar feriados e condições meteorológicas no Brasil durante 2024. Os resultados dessas análises são apresentados em um dashboard interativo no Looker Studio, que mostra o comportamento dos dados em tabelas conectadas e está apresentado previamente em `Visualizacao_dados`.
 
 # 🚨 Central de Atendimento 1746 - Análise de Chamados 
 
-Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, contida em `analise_python`, referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
+Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, contida em `analise_python.py`, referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
 
 ## 🛠️ Ferramentas Utilizadas
 
@@ -116,7 +116,7 @@ query_chamados_eventos = """
 """
 ```
 # 🌐 Análise de APIs Públicas 
-Este repositório contém um notebook Python `analise_api.ipynb` que realiza uma análise utilizando duas APIs públicas: a Public Holiday API e a Open-Meteo Historical Weather API. O objetivo é responder a várias perguntas relacionadas a feriados e condições meteorológicas no Brasil durante o ano de 2024.
+Este repositório contém um notebook Python `analise_api.py` que realiza uma análise utilizando duas APIs públicas: a Public Holiday API e a Open-Meteo Historical Weather API. O objetivo é responder a várias perguntas relacionadas a feriados e condições meteorológicas no Brasil durante o ano de 2024.
 
 ## 🔧 Ferramentas Utilizadas
 - **Python** : Linguagem de programação utilizada para implementar o código.
