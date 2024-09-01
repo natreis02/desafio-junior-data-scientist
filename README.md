@@ -1,3 +1,7 @@
+# 🏆 Desafio Cientista de Dados 
+
+Neste projeto, exploramos padrões importantes relacionados à base de dados pública 'Datario'. Analisamos os tipos mais frequentes de chamados, os bairros e subprefeituras com o maior número de ocorrências, e como eventos de grande porte, como o Carnaval e o Rock in Rio, influenciam a quantidade de chamados. Além disso, este repositório inclui uma análise complementar que utiliza APIs públicas para investigar feriados e condições meteorológicas no Brasil durante 2024. Os resultados dessas análises são apresentados em um dashboard interativo no Looker Studio, que mostra o comportamento dos dados em tabelas conectadas.
+
 # 🚨 Central de Atendimento 1746 - Análise de Chamados 
 
 Este repositório contém a análise dos chamados registrados pela Central de Atendimento 1746 do Rio de Janeiro, referentes ao dia 01/04/2023. O objetivo desta análise é responder a questões específicas relacionadas a esses registros.
